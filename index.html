@@ -69,6 +69,45 @@
 
         </ul>
     </div>
+
+    <script>
+
+        // Get input element
+        const filterInput = document.getElementById('filterInput');
+
+        // Add event listener
+        filterInput.addEventListener('keyup', (e) => {
+
+            // Get input value
+            const filterValue = filterInput.value.toUpperCase();
+            console.log(filterValue);
+
+            // Get element
+            const ul = document.getElementById('names');
+            const li = document.querySelectorAll('.collection-item');
+
+            // for (let i = 0; i < li.length; i++) {
+            //     console.log(li[i].textContent);
+            // }
+
+            li.forEach((el) => {
+                console.log(el.textContent);
+
+                if (el.textContent.toUpperCase().includes(filterValue)) {
+
+                    el.style.display = 'block';
+
+                } else {
+
+                    el.style.display = 'none';
+
+                }
+
+            })
+
+        })
+
+    </script>
 </body>
 
 </html>
